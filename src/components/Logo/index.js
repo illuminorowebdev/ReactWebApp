@@ -14,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Logo = ({ className }) => {
+const Logo = ({ className, ...rest }) => {
   const classes = useStyles();
   return (
-    <div className={clsx(classes.container, className)}>
+    <div className={clsx(classes.container, className)} {...rest}>
       <img src={LOGO_IMG} alt="logo" className={classes.logo} />
     </div>
   );

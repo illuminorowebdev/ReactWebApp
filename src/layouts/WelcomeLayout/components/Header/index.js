@@ -1,6 +1,7 @@
 import React from 'react';
-import { makeStyles, Button, colors } from '@material-ui/core';
+import { makeStyles, Button } from '@material-ui/core';
 import { Logo } from 'components';
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -12,13 +13,19 @@ const useStyles = makeStyles((theme) => ({
   button: {
     borderRadius: theme.spacing(1.5),
   },
+  logo: {
+    cursor: 'pointer',
+  },
 }));
 
 const Header = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Logo />
+      <NavLink to="/">
+        <Logo className={classes.logo} />
+      </NavLink>
+
       <div className={classes.button}>
         <Button variant="outlined" className={classes.button}>
           Mission Statement
