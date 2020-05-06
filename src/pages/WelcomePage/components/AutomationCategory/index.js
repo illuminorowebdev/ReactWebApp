@@ -1,20 +1,23 @@
 import React from 'react';
 import { makeStyles, colors } from '@material-ui/core';
+import { VideoPlayerThumb } from 'components';
 
 const useStyles = makeStyles((theme) => ({
   container: {
     width: '100%',
     maxWidth: 250,
-    minHeight: 150,
+    height: 200,
     border: `1px solid ${colors.blueGrey[500]}`,
+    position: 'relative',
   },
 }));
 
-const AutomationCategory = () => {
+const AutomationCategory = (props) => {
   const classes = useStyles();
+
   return (
     <div className={classes.container}>
-      Link to automation featured category
+      <VideoPlayerThumb {...props} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Grid, colors } from '@material-ui/core';
-import AutomationExample from '../AutomationExample';
+import AutomationCategory from '../AutomationCategory';
 import config from 'config';
 
 const useStyles = makeStyles((theme) => ({
@@ -48,7 +48,7 @@ const AutomationCategoryContent = () => {
       <Grid container justify="space-between" alignItems="center" spacing={4}>
         {automations.map((item) => (
           <Grid item sm={4} xs={4} key={item.id}>
-            <AutomationExample {...item} />
+            <AutomationCategory {...item} />
           </Grid>
         ))}
       </Grid>

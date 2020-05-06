@@ -1,12 +1,11 @@
 import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
 import {
-  Header,
   DescriptionContent,
-  Footer,
   AutomationExamplesContent,
   AutomationCategoryContent,
 } from './components';
+import { Page } from 'components';
 
 const useStyles = makeStyles((theme) => ({
   container: {},
@@ -15,16 +14,12 @@ const useStyles = makeStyles((theme) => ({
 const WelcomePage = () => {
   const classes = useStyles();
   return (
-    <div className={classes.container}>
-      <Header />
-      <Divider />
+    <Page title="Welcome" className={classes.container}>
       <DescriptionContent />
       <AutomationExamplesContent />
       <Divider />
       <AutomationCategoryContent />
-      <Divider />
-      <Footer />
-    </div>
+    </Page>
   );
 };
 
