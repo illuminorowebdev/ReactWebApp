@@ -17,8 +17,8 @@ const WelcomePage = () => {
     <Page title="Welcome" className={classes.container}>
       <DescriptionContent />
       <AutomationExamplesContent />
-      <Divider />
-      <AutomationCategoryContent />
+      {/* <Divider />
+      <AutomationCategoryContent /> */}
     </Page>
   );
 };
