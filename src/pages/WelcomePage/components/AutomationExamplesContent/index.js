@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles, Grid } from '@material-ui/core';
 import AutomationExample from '../AutomationExample';
-import { SubLoader } from 'components';
 import * as API from 'services/api';
+import { SubLoader } from 'components';
 
 const useStyles = makeStyles((theme) => ({
   container: {
