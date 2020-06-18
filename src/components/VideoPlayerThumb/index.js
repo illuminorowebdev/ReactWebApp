@@ -10,11 +10,11 @@ const useStyles = makeStyles((theme) => ({
   container: {
     width: '100%',
     height: '100%',
-    position: 'relative',
+    position: 'relative'
   },
   thumbnail: {
     width: '100%',
-    height: '100%',
+    height: '100%'
   },
   buttonWrapper: {
     position: 'absolute',
@@ -30,15 +30,15 @@ const useStyles = makeStyles((theme) => ({
       cursor: 'pointer',
       backgroundColor: fade(theme.palette.app.secondary, 0.3),
       '& svg': {
-        color: 'white',
-      },
-    },
+        color: 'white'
+      }
+    }
   },
   icon: {
     width: 60,
     height: 60,
     transition: '0.4s',
-    color: theme.palette.app.grey,
+    color: theme.palette.app.grey
   },
   modal: {
     position: 'absolute',
@@ -50,22 +50,22 @@ const useStyles = makeStyles((theme) => ({
     width: 700,
     maxHeight: '100%',
     overflowY: 'auto',
-    maxWidth: '100%',
+    maxWidth: '100%'
   },
   content: {
-    position: 'relative',
+    position: 'relative'
   },
   player: {
     width: 'auto !important',
     height: 'auto !important',
-    maxWidth: '100%',
+    maxWidth: '100%'
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.app.danger,
-  },
+    color: theme.palette.app.danger
+  }
 }));
 
 const VideoPlayerThumb = ({ className, video, thumbnail }) => {
@@ -78,22 +78,22 @@ const VideoPlayerThumb = ({ className, video, thumbnail }) => {
   return (
     <>
       <div className={clsx(classes.container, className)} onClick={toggleModal}>
-        <img alt="thumbnail" src={thumbnail} className={classes.thumbnail} />
+        <img alt="thumbnail" className={classes.thumbnail} src={thumbnail} />
         <div className={classes.buttonWrapper}>
           <PlayCircleOutlineIcon className={classes.icon} />
         </div>
       </div>
       {visible && (
-        <Modal open={visible} onClose={toggleModal}>
+        <Modal onClose={toggleModal} open={visible}>
           <div className={classes.modal}>
             <div className={classes.content}>
               <ReactPlayer
-                url={video}
+                className={classes.player}
                 controls
                 playing
-                className={classes.player}
+                url={video}
               />
-              <IconButton onClick={toggleModal} className={classes.closeButton}>
+              <IconButton className={classes.closeButton} onClick={toggleModal}>
                 <CancelIcon />
               </IconButton>
             </div>
@@ -107,11 +107,11 @@ const VideoPlayerThumb = ({ className, video, thumbnail }) => {
 VideoPlayerThumb.propTypes = {
   className: PropTypes.any,
   video: PropTypes.string.isRequired,
-  thumbnail: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired
 };
 
 VideoPlayerThumb.defaultProps = {
-  className: null,
+  className: null
 };
 
 export default VideoPlayerThumb;

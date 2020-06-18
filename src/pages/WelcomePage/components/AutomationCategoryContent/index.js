@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
     width: '90%',
     maxWidth: 1100,
-    margin: `${theme.spacing(3)}px auto`,
+    margin: `${theme.spacing(3)}px auto`
   },
   top: {
     border: `1px solid ${colors.grey[500]}`,
@@ -16,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 400,
     width: '100%',
     padding: theme.spacing(2),
-    margin: `auto`,
+    margin: 'auto',
     marginBottom: theme.spacing(6),
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 }));
 
 const AutomationCategoryContent = () => {
@@ -29,25 +29,25 @@ const AutomationCategoryContent = () => {
     {
       id: '1',
       video: `${config.ASSET_VIDEO_URL}SimpleNodeRed.mp4`,
-      thumbnail: `${config.ASSET_THUMBNAIL_URL}SimpleNodeRed.png`,
+      thumbnail: `${config.ASSET_THUMBNAIL_URL}SimpleNodeRed.png`
     },
     {
       id: '2',
       video: `${config.ASSET_VIDEO_URL}SimpleNodeRed.mp4`,
-      thumbnail: `${config.ASSET_THUMBNAIL_URL}SimpleNodeRed.png`,
+      thumbnail: `${config.ASSET_THUMBNAIL_URL}SimpleNodeRed.png`
     },
     {
       id: '3',
       video: `${config.ASSET_VIDEO_URL}SimpleNodeRed.mp4`,
-      thumbnail: `${config.ASSET_THUMBNAIL_URL}SimpleNodeRed.png`,
-    },
+      thumbnail: `${config.ASSET_THUMBNAIL_URL}SimpleNodeRed.png`
+    }
   ];
   return (
     <div className={classes.container}>
       <div className={classes.top}>Below the fold</div>
-      <Grid container justify="space-between" alignItems="center" spacing={4}>
+      <Grid alignItems="center" container justify="space-between" spacing={4}>
         {automations.map((item) => (
-          <Grid item sm={4} xs={4} key={item.id}>
+          <Grid item key={item.id} sm={4} xs={4}>
             <AutomationCategory {...item} />
           </Grid>
         ))}

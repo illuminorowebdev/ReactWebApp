@@ -3,18 +3,18 @@ import { makeStyles, Divider } from '@material-ui/core';
 import {
   DescriptionContent,
   AutomationExamplesContent,
-  AutomationCategoryContent,
+  AutomationCategoryContent
 } from './components';
 import { Page } from 'components';
 
 const useStyles = makeStyles((theme) => ({
-  container: {},
+  container: {}
 }));
 
 const WelcomePage = () => {
   const classes = useStyles();
   return (
-    <Page title="Welcome" className={classes.container}>
+    <Page className={classes.container} title="Welcome">
       <DescriptionContent />
       <AutomationExamplesContent />
       {/* <Divider />

@@ -4,13 +4,13 @@ import { makeStyles, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
-    backgroundImage: `url(/images/background.jpg)`,
+    backgroundImage: 'url(/images/background.jpg)',
     height: '65vw',
     maxHeight: 715,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     maxWidth: 1100,
-    margin: 'auto',
+    margin: 'auto'
   },
   commentWrapper: {
     padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
@@ -19,14 +19,14 @@ const useStyles = makeStyles((theme) => ({
     width: '50%',
     height: '50%',
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   comment: {
     fontSize: 22,
     lineHeight: '26px',
     fontWeight: 'bold',
-    color: theme.palette.app.primary,
-  },
+    color: theme.palette.app.primary
+  }
 }));
 
 const DescriptionContent = () => {
@@ -34,7 +34,7 @@ const DescriptionContent = () => {
   return (
     <div className={classes.container}>
       <div className={classes.commentWrapper}>
-        <Typography variant="body1" className={classes.comment}>
+        <Typography className={classes.comment} variant="body1">
           Illuminoro aims to accelerate the pace of automation whilst ensuring
           the delivery vehicles are highly secured.
           <br />

@@ -18,45 +18,45 @@ const useStyles = makeStyles((theme) => ({
     width: '90%',
     margin: 'auto',
     maxWidth: 1100,
-    padding: `${theme.spacing(3)}px 0`,
+    padding: `${theme.spacing(3)}px 0`
   },
   thumbnail: {
     maxWidth: 300,
     maxHeight: 300,
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(2)
   },
   player: {
     width: '70% !important',
     height: 'auto !important',
     maxWidth: 500,
-    marginBottom: theme.spacing(2),
-  },
+    marginBottom: theme.spacing(2)
+  }
 }));
 
 const ProjectDetailsPage = (props) => {
   const [data, setData] = useState({
     details: null,
-    loading: true,
+    loading: true
   });
   const router = useRouter();
   const classes = useStyles();
 
   useEffect(() => {
     const {
-      params: { id: projectId },
+      params: { id: projectId }
     } = router.match;
     if (projectId) {
       API.getProject(projectId)
         .then((res) => {
           setData({
             details: res,
-            loading: false,
+            loading: false
           });
         })
         .catch((err) => {
           setData({
             details: null,
-            loading: false,
+            loading: false
           });
         });
     } else {
@@ -66,16 +66,16 @@ const ProjectDetailsPage = (props) => {
 
   const onDownload = () => {
     const payload = {
-      data: [data.details.source],
+      data: [data.details.source]
     };
     setData((prevData) => ({
       ...prevData,
-      loading: true,
+      loading: true
     }));
     API.createPublicSignedUrls(payload).then((res) => {
       setData((prevData) => ({
         ...prevData,
-        loading: false,
+        loading: false
       }));
       window.open(res[0], '_blank');
     });
@@ -87,28 +87,28 @@ const ProjectDetailsPage = (props) => {
         {data.loading && <GlobalLoader />}
         {data.details && (
           <>
-            <Typography variant="h4" paragraph>
+            <Typographyparagraph variant="h4">
               {data.details.title}
-            </Typography>
+            </Typographyparagraph>
             <Typography paragraph>{data.details.description}</Typography>
 
             <Typography>Thumbnail Image</Typography>
             <img
-              src={config.AWS_S3_URL + data.details.thumbnail}
               alt="thumbnail"
               className={classes.thumbnail}
+              src={config.AWS_S3_URL + data.details.thumbnail}
             />
 
             <Typography>Video</Typography>
             <ReactPlayer
-              url={config.AWS_S3_URL + data.details.video}
-              controls
               className={classes.player}
+              controls
+              url={config.AWS_S3_URL + data.details.video}
             />
 
             <Typography>Source Code</Typography>
             <Tooltip title="Click to download source code">
-              <Button variant="outlined" onClick={onDownload}>
+              <Button onClick={onDownload} variant="outlined">
                 {getFileNameFromKey(data.details.source)}
               </Button>
             </Tooltip>

@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     border: `1px solid ${colors.blueGrey[500]}`,
     borderRadius: 5,
     width: '90%',
-    margin: 'auto',
+    margin: 'auto'
   },
   content: {
     width: '100%',
@@ -17,15 +17,15 @@ const useStyles = makeStyles((theme) => ({
     height: 200,
     borderTop: `1px solid ${colors.blueGrey[500]}`,
     borderBottom: `1px solid ${colors.blueGrey[500]}`,
-    position: 'relative',
+    position: 'relative'
   },
 
   title: {
     margin: `${theme.spacing(1)}px`,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    textOverflow: 'ellipsis',
-  },
+    textOverflow: 'ellipsis'
+  }
 }));
 
 const AutomationExample = ({ id, title, video, thumbnail, ...rest }) => {
@@ -37,17 +37,17 @@ const AutomationExample = ({ id, title, video, thumbnail, ...rest }) => {
 
   return (
     <div className={classes.container}>
-      <Typography className={classes.title} align="center" variant="h5">
+      <Typography align="center" className={classes.title} variant="h5">
         {title}
       </Typography>
       <div className={classes.content}>
         <VideoPlayerThumb
-          video={config.AWS_S3_URL + video}
           thumbnail={config.AWS_S3_URL + thumbnail}
+          video={config.AWS_S3_URL + video}
         />
       </div>
 
-      <Button onClick={onDetails} fullWidth>
+      <Button fullWidth onClick={onDetails}>
         Details
       </Button>
     </div>

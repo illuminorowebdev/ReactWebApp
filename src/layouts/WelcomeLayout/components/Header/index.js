@@ -8,14 +8,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
+    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`
   },
   button: {
-    borderRadius: theme.spacing(1.5),
+    borderRadius: theme.spacing(1.5)
   },
   logo: {
-    cursor: 'pointer',
-  },
+    cursor: 'pointer'
+  }
 }));
 
 const Header = () => {
@@ -27,11 +27,11 @@ const Header = () => {
       </NavLink>
 
       <div className={classes.button}>
-        <Button variant="outlined" className={classes.button}>
+        <Button className={classes.button} variant="outlined">
           Mission Statement
         </Button>
         &nbsp;&nbsp;&nbsp;
-        <Button variant="outlined" className={classes.button}>
+        <Button className={classes.button} variant="outlined">
           Automation Repo
         </Button>
       </div>
